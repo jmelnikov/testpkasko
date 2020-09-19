@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+</head>
+<body>
+    <table border="1" style="border-style: solid; vertical-align: top">
+        <thead>
+            <th>Автор(ы)</th>
+            <th>Название книги</th>
+            <th>Стоимость книги</th>
+            <th>Год издания</th>
+            <th>Изображение</th>
+            <th>Минимальная стоимость доставки</th>
+        </thead>
+    <? foreach ($books as $book) { ?>
+        <tr>
+            <td><?=$book['author']?></td>
+            <td><?=$book['name']?></td>
+            <td style="text-align: center"><?=$book['price']?> руб.</td>
+            <td style="text-align: center"><?=$book['year']?></td>
+            <td><a href="<?=$book['image']?>" target="_blank"><img src="<?=$book['image']?>" width="100px" alt="<?=$book['name']?>"></a></td>
+            <td style="text-align: center">От <?=$book['deliveryPrice']?> руб.</td>
+    <? } ?>
+    </table>
+<br/><br/>
+</body>
+</html>
